@@ -1,0 +1,35 @@
+<section class="section">
+    <div class="title">
+        Programmation {{gameName}}
+    </div>
+    <section class="section mx-6">
+        <table class="table is-striped is-bordered is-hoverable is-fullwidth ">
+            <thead>
+                <th>Date</th>
+                <th>Heure</th>
+                <th>Evenement</th>
+                <th>Adversaire</th>
+                <th>
+                    <abbr title="Live">
+                        <span class="icon-header">
+                            <i class="fa fab fa-twitch"></i>
+                        </span>
+                    </abbr>
+                </th>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="observable_prog$ | async as programmation">
+                    <ng-container *ngFor="let event of programmation">
+                        <tr (click)="redirectEvent(event.link)">
+                            <td>{{event.date}}</td>
+                            <td>{{event.heure}}</td>
+                            <td>{{event.title}}</td>
+                            <td>{{event.adversaire}}</td>
+                                <td>{{event.liveName}}</td>
+                        </tr>
+                    </ng-container>
+                </ng-container>
+            </tbody>
+        </table>
+    </section>
+</section>

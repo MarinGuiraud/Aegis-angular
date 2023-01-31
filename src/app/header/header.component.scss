@@ -1,0 +1,47 @@
+button{
+    background-color:white;
+    display: flex;
+    justify-content: center;
+}
+
+.delete{
+    background-color:black
+}
+
+button:hover{
+    background-color: gold;
+}
+
+.youtube-logo{
+    background-color: red;
+}
+
+.box{
+    background-color:rgb(242, 242, 230) ;
+}
+
+.navbar{
+    background-image: url("/assets/img/aegis_front_page.jpg");
+}
+
+.icon-header:hover{
+    color:gold
+}
+
+.viewer_count{
+    color:red;
+    float:right;
+}
+
+.box{
+    background-size: 1050px;
+}
+
+.yt_name{
+    color:white;
+    -webkit-text-stroke: 1.2px black;
+}
+
+.yt_name:hover{
+    color:gold
+}

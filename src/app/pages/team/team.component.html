@@ -1,0 +1,53 @@
+<section class="section">
+    <div class="title is-4">Notre équipe {{gameName}}</div>
+    <ng-container *ngIf="observable_team$ | async as team">
+        <div class="tabs is-centered is-medium">
+            <ul class="player-tab">
+                <ng-container *ngFor="let player of team">
+                    <li class="is"><a (click)="displayTab(player.role)">{{player.role}}</a></li>
+                </ng-container>
+            </ul>
+        </div>
+        <div id="tab-content">
+            <ng-container *ngFor="let player of team; let i=index">
+                <div id="{{player.role}}" class="player" [ngClass]="i===0?'is-active':'is-hidden'">
+                    <div class="columns">
+                        <div class="column is-half">
+                            <figure class="image">
+                                <img src="{{player.image}}" alt="main_image">
+                            </figure>
+                        </div>
+                        <div class="column ml-6">
+                            <div class="content">
+                                <h1>{{player.name}}</h1>
+                                <ng-container *ngFor="let text of player.description">
+                                    {{text}}
+                                </ng-container>
+                                <!-- PALMARES -->
+                                <ng-container *ngIf="player.palmares.length!=0">
+                                    <h2>Palmares 
+                                        <span class="icon-header">
+                                            <i class="fa fab fa-trophy"></i>
+                                        </span>
+                                        :
+                                    </h2>
+                                    <ul>
+                                        <ng-container *ngFor="let palmares of player.palmares">
+                                            <li class="mt-4">
+                                                <h4>{{palmares.name}} : Top {{palmares.classement}}</h4>
+                                                <i>{{palmares.date}}</i>
+                                            </li>
+                                        </ng-container>
+                                    </ul>
+                                </ng-container>
+                                    <ng-container *ngFor="let tag of player.tags">
+                                        <span class="tag is-warning is-medium is-rounded mt-3">{{tag}}</span>
+                                    </ng-container>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </ng-container>
+        </div>
+    </ng-container>
+</section>

@@ -1,0 +1,42 @@
+.block_element, .title, .article_subtitle{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    text-align: justify;
+}
+
+.image_article{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.dateOfCreation{
+    font-style: italic;
+}
+
+.iframe_container{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.tweet{
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.card{
+    height: 100%;
+    border: 3px solid black;
+}
+
+.card:hover{
+    border: 3px solid gold;
+}

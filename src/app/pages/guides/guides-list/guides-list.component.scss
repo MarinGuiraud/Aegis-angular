@@ -1,0 +1,24 @@
+.box{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    border: 3px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title, .subtitle{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+.box:hover{
+    border: 3px solid gold;
+}
+
+.content{
+    text-align: center;
+}

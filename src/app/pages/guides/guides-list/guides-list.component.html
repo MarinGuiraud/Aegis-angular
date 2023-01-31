@@ -1,0 +1,43 @@
+<section class="section">
+    <div class="title">Nos guides {{gameName}} :</div>
+    <section>
+        <ng-container *ngIf="observable_guides$ | async as guides_sets">
+            <ng-container *ngFor="let guide_set of guides_sets">
+                <div class="subtitle">
+                    Les guides du set {{guide_set.set}}
+                </div>
+                <ng-container *ngFor="let guide of guide_set.guides">
+                    <div class="box" (click)="activeModal('guide-live-modal', guide.images)"
+                    :style="background-image:url({{guide.background_image}})">
+                    </div>
+                </ng-container>
+            </ng-container>
+        </ng-container>
+    </section>
+</section>
+<div id="guide-live-modal" class="modal">
+    <div class="modal-background" (click)="removeModal('guide-live-modal')"></div>
+    <div class="modal-content">
+        <div class="container">
+            <!-- Start Carousel -->
+            <div id="carousel-image" class="carousel">
+                <!-- This part is implemented id JS -->
+            </div>
+            <!-- End Carousel -->
+        </div>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+</div>
+<section>
+    <ng-container *ngIf="gameName==='League of Legends'">
+        <div class="content mb-6">
+            <h1>On vous montre ce qu'il faut faire en live</h1>
+            <h2>
+                La leçon commence le 18 janvier contre Vitality Bee chez 
+                <a href="https://www.twitch.tv/shaunz">Shaunz</a>
+            </h2>
+        </div>
+    </ng-container>
+</section>
+
+  

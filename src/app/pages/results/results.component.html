@@ -1,0 +1,34 @@
+<section class="section">
+    <div class="title is-4">Les tournois {{gameName}}</div>
+    <section class="section">
+        <ng-container *ngFor="let tournament of tournament_data">
+            <div class="subtitle">{{tournament.name}}</div>
+            <section class="section mx-6">
+                <table class="table is-striped is-bordered is-hoverable is-fullwidth ">
+                    <thead>
+                        <th>Position</th>
+                        <th>Nom</th>
+                        <ng-container *ngFor="let colonne of tournament.colonnes">
+                            <th>{{colonne}}</th>
+                        </ng-container>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let team of tournament.teams">
+                            <tr>
+                                <td>{{team.position}}</td>
+                                <td>{{team.name}}</td>
+                                <ng-container *ngFor="let score of team.scores">
+                                    <th>{{score}}</th>
+                                </ng-container>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </section>
+        </ng-container>
+        <ng-container *ngIf="tournament_data.length===0">
+            <div class="has-text-centered mb-4"><strong>En attente de tournois</strong></div>
+            <progress class="progress is-medium is-warning" max="100"></progress>
+        </ng-container>
+    </section>
+</section>

@@ -1,0 +1,101 @@
+<section class="section">
+    <ng-container *ngIf="observable_article_data$ | async as article_data">
+        <h1 class="title is-spaced is-1">{{article_data.infos.title}}</h1>
+        <div class="subtitle is-3 article_subtitle">
+            {{article_data.infos.subtitle}}
+        </div>
+        <ng-container *ngIf="article_data.infos.image !== ''">
+            <figure class="image image_article">
+                <img src="{{article_data.infos.image}}" alt="main_image">
+            </figure>
+        </ng-container>
+        <ng-container *ngFor="let part of article_data.parts">
+            <div class="block_element mgh-large py-5">
+                <div class="subtitle is-4 mb-3">
+                    {{part.title}}
+                </div>
+                <ng-container *ngFor="let text of part.content">
+                    {{text}}
+                </ng-container>
+            </div>
+            <ng-container *ngIf="part.image">
+                <figure class="image image_article">
+                    <img src="{{part.image}}" alt="part_image">
+                </figure>
+            </ng-container>
+            <ng-container *ngIf="part.video">
+                <iframe class="iframe_container" width="560" height="315" [src]="part.video | safeUrl" title="YouTube video player" 
+                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </ng-container>
+            <ng-container *ngIf="part.tweet">
+                <div class="tweet">
+                    <div class="tweet2">
+                        <ngx-tweet tweetId="{{part.tweet}}"></ngx-tweet>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+        <div class="block_element dateOfCreation mt-4">
+            {{article_data.infos.dateOfCreation}}
+        </div>
+    </ng-container>
+</section>
+<section>
+    <ng-container *ngIf="observable_news_data$ | async as news_list">
+        <div class="subtitle is-3 article_subtitle">Les autres news du moment :</div>
+        <div class="columns px-6 ml-6 mr-6">
+            <div class="column" id="column1">
+                <div class="card" routerLink="../{{news_list[0].link}}">
+                    <div class="card-image">
+                        <figure class="image is-5by3"> 
+                            <img src="{{news_list[0].image}}" alt="image_alt" style="border-radius:0px">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-4">
+                            {{news_list[0].title}}
+                        <p>
+                        <p>
+                            {{news_list[0].subtitle}}
+                        <p>
+                    </div>
+                </div>
+            </div>
+            <div class="column" id="column2">
+                <div class="card" routerLink="../{{news_list[1].link}}">
+                    <div class="card-image">
+                        <figure class="image is-5by3"> 
+                            <img src="{{news_list[1].image}}" alt="image_alt" style="border-radius:0px">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-4">
+                            {{news_list[1].title}}
+                        <p>
+                        <p>
+                            {{news_list[1].subtitle}}
+                        <p>
+                    </div>
+                </div>
+            </div>
+            <div class="column" id="column3">
+                <div class="card" routerLink="../{{news_list[2].link}}">
+                    <div class="card-image">
+                        <figure class="image is-5by3"> 
+                            <img src="{{news_list[2].image}}" alt="image_alt" style="border-radius:0px">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-4">
+                            {{news_list[2].title}}
+                        <p>
+                        <p>
+                            {{news_list[2].subtitle}}
+                        <p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</section>

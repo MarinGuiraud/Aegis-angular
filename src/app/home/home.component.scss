@@ -1,0 +1,59 @@
+
+.hero{
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 85%;  
+}
+
+button{
+    background-color:black;
+}
+
+button:hover{
+    background-color: gold;
+}
+
+
+.notification{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+
+.title, .subtitle, .field {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color:gold; 
+
+}
+
+.hero-title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: rgb(0, 0, 0, 0.6);
+}
+
+#lfl-roster-hero{
+    background-image: url("/assets/img/home/lol_roster.jpg");
+}
+
+#aegis-hero{
+    background-image: url("/assets/img/home/aegis_front_page.jpg");
+}
+
+#merch-hero{
+    background-image: url("/assets/img/home/nouvelle_collection.jpg")
+}
+
+#hexleague-hero{
+    background-image: url("/assets/img/home/equipe_tft.jpg")
+}

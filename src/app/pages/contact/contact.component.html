@@ -1,0 +1,53 @@
+<section class="section">
+    <div class="title is-3">
+        Me contacter : 
+    </div>
+    <section class="section">
+        <form (ngSubmit)="submitForm()">
+            <div class="field">
+                <label class="label">Prénom</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Prénom" name="firstname" [(ngModel)]="firstname">
+                    <span class="icon is-small is-left">
+                        <i class="fa far fa-address-card"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Nom</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="Nom" name="lastname" [(ngModel)]="lastname">
+                    <span class="icon is-small is-left">
+                        <i class="fa far fa-address-card"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" placeholder="Email" name="email" [(ngModel)]="email">
+                    <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Objet</label>
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="email" placeholder="Objet" name="object" [(ngModel)]="object">
+                    <span class="icon is-small is-left">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field">
+                <textarea class="textarea" placeholder="" rows="10" name="message" [(ngModel)]="message"></textarea>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                <button type="submit" class="button is-rounded">Envoyer</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</section>
